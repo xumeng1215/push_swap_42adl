@@ -13,42 +13,14 @@ FT_PRINTF_DIR = ft_printf
 CHECKERDIR = bonus
 
 # Source files for pushswap
-SRC = $(SRCDIR)/args_check.c \
-      $(SRCDIR)/count_and_set.c \
-      $(SRCDIR)/count_and_set_2.c \
-      $(SRCDIR)/do_op.c \
-      $(SRCDIR)/do_op_2.c \
-      $(SRCDIR)/find_place.c \
-      $(SRCDIR)/op_push.c \
-      $(SRCDIR)/op_rev_rotate.c \
-      $(SRCDIR)/op_rotate.c \
-      $(SRCDIR)/op_swap.c \
-      $(SRCDIR)/pushswap.c \
-      $(SRCDIR)/sort.c \
-      $(SRCDIR)/stack_util.c \
-      $(SRCDIR)/stack_util_2.c
+SRC = $(wildcard $(SRCDIR)/*.c)
 
 # Object files for pushswap
 OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 # Source files for checker
-CHECKER_SRC = $(CHECKERDIR)/checker.c \
-              $(CHECKERDIR)/checker_util.c \
-              $(CHECKERDIR)/get_next_line.c \
-              $(CHECKERDIR)/get_next_line_utils.c \
-              $(SRCDIR)/args_check.c \
-              $(SRCDIR)/count_and_set.c \
-              $(SRCDIR)/count_and_set_2.c \
-              $(SRCDIR)/do_op.c \
-              $(SRCDIR)/do_op_2.c \
-              $(SRCDIR)/find_place.c \
-              $(SRCDIR)/op_push.c \
-              $(SRCDIR)/op_rev_rotate.c \
-              $(SRCDIR)/op_rotate.c \
-              $(SRCDIR)/op_swap.c \
-              $(SRCDIR)/sort.c \
-              $(SRCDIR)/stack_util.c \
-              $(SRCDIR)/stack_util_2.c
+CHECKER_SRC = $(wildcard $(CHECKERDIR)/*.c) \
+		$(wildcard $(SRCDIR)/*.c)
 
 # Object files for checker
 CHECKER_OBJ = $(CHECKER_SRC:$(CHECKERDIR)/%.c=$(OBJDIR)/%.o)
